@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16.2
+    container_name: Qyon_Project
+    restart: always
+    ports:
+      - '8080:5432'
+    environment:
+      POSTGRES_DB: Qyon_DB
+      POSTGRES_USER: qyon
+      POSTGRES_PASSWORD: Projeto2427
+    volumes:
+      - ..\database:/var/lib/postgresql/database
+
+volumes:
+  postgres_data:
+    driver: local
