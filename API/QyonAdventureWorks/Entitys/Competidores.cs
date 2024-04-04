@@ -1,16 +1,19 @@
-﻿namespace QyonAdventureWorks.Entitys
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace QyonAdventureWorks.Entitys
 {
-    public class Competidores
+    public class competidores
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
+        [Key]
+        public int id_competidor { get; set; }
+        public string nome { get; set; }
 
-        public string Sexo { get; set; }
+        public string sexo { get; set; }
 
-        public decimal TemperaturaMediaCorpo { get; set; }
+        public decimal temperaturamediacorpo { get; set; }
 
-        public decimal Peso { get; set; }
+        public decimal peso { get; set; }
 
-        public decimal Altura { get; set; }
+        public decimal altura { get; set; }
     }
 }

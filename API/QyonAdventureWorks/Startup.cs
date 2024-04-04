@@ -21,25 +21,20 @@ namespace QyonAdventureWorks
 
         public IConfiguration Configuration { get; }
 
-        // Este método é chamado em tempo de execução. Use este método para adicionar serviços ao contêiner.
+        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
+            services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
         }
 
-        // Este método é chamado em tempo de execução. Use este método para configurar o pipeline de solicitação HTTP.
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                // Middleware de tratamento de erros em produção
-                app.UseExceptionHandler("/error");
-                app.UseHsts();
             }
 
             app.UseHttpsRedirection();
