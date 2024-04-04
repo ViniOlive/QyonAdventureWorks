@@ -68,10 +68,11 @@ namespace QyonAdventureWorks.Controllers
         {
             var competidor_db = await _context.competidores.FindAsync(id);
 
-            if (!string.IsNullOrEmpty(competidor.nome))
-            {
-                competidor_db.nome = competidor.nome;
-            }
+            competidor_db.nome = !string.IsNullOrEmpty(competidor.nome) ? competidor.nome : competidor_db.nome;
+            competidor_db.sexo = !string.IsNullOrEmpty(competidor.sexo) ? competidor.sexo : competidor_db.sexo;
+            competidor_db.temperaturamediacorpo = competidor.temperaturamediacorpo > 0 ? competidor.temperaturamediacorpo : competidor_db.temperaturamediacorpo;
+            competidor_db.peso = competidor.peso > 0 ? competidor.peso : competidor_db.peso;
+            competidor_db.altura = competidor.altura > 0 ? competidor.altura : competidor_db.altura;
 
             return Ok(_context.SaveChanges());
         }
