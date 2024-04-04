@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "654fbe7e-aea4-4b39-8ea7-797904f8c93a",
+		"name": "Qyon - API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10291476"
+	},
+	"item": [
+		{
+			"name": "Consulta todos os comptidores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44344/api/Competidores",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44344",
+					"path": [
+						"api",
+						"Competidores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta competidores por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44344/api/Competidores/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44344",
+					"path": [
+						"api",
+						"Competidores",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualiza informações por id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"nome\":\"Vinicius De Oliveira\",\r\n  \"altura\": 1.90,\r\n  \"peso\": 84  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44344/api/Competidores/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44344",
+					"path": [
+						"api",
+						"Competidores",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
