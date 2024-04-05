@@ -7,75 +7,399 @@
 	},
 	"item": [
 		{
-			"name": "Consulta todos os comptidores",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://localhost:44344/api/Competidores",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "44344",
-					"path": [
-						"api",
-						"Competidores"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Consulta competidores por id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://localhost:44344/api/Competidores/1",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "44344",
-					"path": [
-						"api",
-						"Competidores",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Atualiza informações por id",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"nome\":\"Vinicius De Oliveira\",\r\n  \"altura\": 1.90,\r\n  \"peso\": 84  \r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Competidores",
+			"item": [
+				{
+					"name": "Consultar todos os competidores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44344/QyonAdventureWorks/api/Competidores",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44344",
+							"path": [
+								"QyonAdventureWorks",
+								"api",
+								"Competidores"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://localhost:44344/api/Competidores/1",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "44344",
-					"path": [
-						"api",
-						"Competidores",
-						"1"
-					]
+				{
+					"name": "Consulta tempo médio gasto de competidores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44344/QyonAdventureWorks/Api/Competidor/Tempo-Medio-Gasto",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44344",
+							"path": [
+								"QyonAdventureWorks",
+								"Api",
+								"Competidor",
+								"Tempo-Medio-Gasto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta de competidores que não correram",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44344/QyonAdventureWorks/Api/Competidor-nao-correu",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44344",
+							"path": [
+								"QyonAdventureWorks",
+								"Api",
+								"Competidor-nao-correu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar competidores por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44344/QyonAdventureWorks/api/Competidores/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44344",
+							"path": [
+								"QyonAdventureWorks",
+								"api",
+								"Competidores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualiza informações por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nome\":\"Larissa Keller\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44344/QyonAdventureWorks/api/Competidores/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44344",
+							"path": [
+								"QyonAdventureWorks",
+								"api",
+								"Competidores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta competidor por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44344/QyonAdventureWorks/api/Competidores/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44344",
+							"path": [
+								"QyonAdventureWorks",
+								"api",
+								"Competidores",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar novo competidor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nome\": \"Flavinho do pneu\",\r\n  \"altura\": 2.00,\r\n  \"temperaturamediacorpo\": 37.8,\r\n  \"sexo\": \"M\",\r\n  \"peso\":90\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44344/QyonAdventureWorks/api/Competidores",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44344",
+							"path": [
+								"QyonAdventureWorks",
+								"api",
+								"Competidores"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Pistas",
+			"item": [
+				{
+					"name": "Cadastrar  nova pista de corrida",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\":\"Estrada da Adrenalina\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44344/QyonAdventureWorks/api/Pistas",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44344",
+							"path": [
+								"QyonAdventureWorks",
+								"api",
+								"Pistas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar pistas de corrida",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\":\"Estrada da Adrenalina\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44344/QyonAdventureWorks/api/Pistas",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44344",
+							"path": [
+								"QyonAdventureWorks",
+								"api",
+								"Pistas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar pistas de corrida por id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\":\"Estrada da Adrenalina\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44344/QyonAdventureWorks/api/Pistas/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44344",
+							"path": [
+								"QyonAdventureWorks",
+								"api",
+								"Pistas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar pista de corrida por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\":\"Estrada da Adrenalina\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44344/QyonAdventureWorks/api/Pistas/5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44344",
+							"path": [
+								"QyonAdventureWorks",
+								"api",
+								"Pistas",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verificar pistas já utilizadas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44344/QyonAdventureWorks/Api/Pistas/Pistas-Utilizadas",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44344",
+							"path": [
+								"QyonAdventureWorks",
+								"Api",
+								"Pistas",
+								"Pistas-Utilizadas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Histórico de corrida",
+			"item": [
+				{
+					"name": "Cadastrar histórico de corrida",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"competidorid\": 1,\r\n  \"pistacorridaid\": 3,\r\n  \"datacorrida\": \"2024-04-04T23:00:00\",\r\n  \"tempogasto\": 35.45\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44344/QyonAdventureWorks/api/HistoricoDeCorrida",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44344",
+							"path": [
+								"QyonAdventureWorks",
+								"api",
+								"HistoricoDeCorrida"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar histórico de corrida por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pistacorridaid\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44344/QyonAdventureWorks/api/HistoricoDeCorrida/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44344",
+							"path": [
+								"QyonAdventureWorks",
+								"api",
+								"HistoricoDeCorrida",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
