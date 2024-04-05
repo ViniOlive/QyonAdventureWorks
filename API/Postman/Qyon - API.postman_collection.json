@@ -345,7 +345,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"competidorid\": 1,\r\n  \"pistacorridaid\": 3,\r\n  \"datacorrida\": \"2024-04-04T23:00:00\",\r\n  \"tempogasto\": 35.45\r\n}",
+							"raw": "{\r\n  \"competidorid\": 2,\r\n  \"pistacorridaid\": 1,\r\n  \"datacorrida\": \"2024-04-04T05:00:00\",\r\n  \"tempogasto\": 53.45\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

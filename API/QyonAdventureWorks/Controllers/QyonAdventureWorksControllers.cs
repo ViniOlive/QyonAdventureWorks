@@ -317,8 +317,8 @@ namespace QyonAdventureWorks.Controllers
             var pistasUtilizadas = _context.historicocorrida
                                             .Join(_context.pistacorrida,
                                                   hist => hist.pistacorridaid,
-                                                  pista => pista.id_pista, 
-                                                  (hist, pista) => pista.descricao) 
+                                                  pista => pista.id_pista,
+                                                  (hist, pista) => pista.descricao)
                                             .Distinct()
                                             .ToList();
 
@@ -348,22 +348,33 @@ namespace QyonAdventureWorks.Controllers
         [HttpGet]
         public IActionResult GetCompetidoresComTempoMedio()
         {
-            var totalSegundos = _context.historicocorrida
-                                .AsEnumerable()
-                                .Select(item => TimeSpan.FromHours((double)item.tempogasto).TotalSeconds)
-                                .ToList();
             var competidoresComTempoMedio = _context.competidores
-                                                    .Select(competidor => new
-                                                    {
-                                                        Id = competidor.id_competidor,
-                                                        Nome = competidor.nome,
-                                                        TempoMedio = _context.historicocorrida
-                                                                            .Where(hist => hist.competidorid == competidor.id_competidor)
-                                                                            
-                                                    })
-                                                    .ToList();
+                        .ToList()
+                        .Select(competidor => new
+                        {
+                            Id = competidor.id_competidor,
+                            Nome = competidor.nome,
+                            TempoMedio = _context.historicocorrida
+                                .Where(hist => hist.competidorid == competidor.id_competidor && hist.tempogasto != null)
+                                .AsEnumerable()
+                                .Select(hist => (double?)hist.tempogasto)
+                                .DefaultIfEmpty()
+                                .Average()
+                        })
+                        .Where(item => item.TempoMedio != null)
+                        .ToList();
 
-            return Ok(competidoresComTempoMedio);
+
+            try
+            {
+                return Ok(competidoresComTempoMedio);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, $"Erro ao verificar o tempo médio gasto dos competidores: {ex.Message}");
+            }
+
         }
     }
 
@@ -385,7 +396,16 @@ namespace QyonAdventureWorks.Controllers
                                                   .Where(competidor => !_context.historicocorrida.Any(hist => hist.competidorid == competidor.id_competidor))
                                                   .ToList();
 
-            return Ok(competidoresSemCorrida);
+            
+            try
+            {
+                return Ok(competidoresSemCorrida);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, $"Erro ao verificar os competidores que não realizaram nenhuma corrida: {ex.Message}");
+            }
         }
     }
 }
