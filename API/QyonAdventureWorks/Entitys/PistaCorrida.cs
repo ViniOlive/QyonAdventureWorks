@@ -1,10 +1,14 @@
-﻿
+﻿using QyonAdventureWorks.Properties;
+using System.ComponentModel.DataAnnotations;
+
 namespace QyonAdventureWorks.Entitys
 {
-    public class PistaCorrida
+    public class pistacorrida
     {
-        public int Id { get; set; }
+        [Key]
+        public int? id_pista { get; set; }
 
-        public string Descricao { get; set; }
+        [Required(ErrorMessageResourceName = "RequiredMessage", ErrorMessageResourceType = typeof(Messages))]
+        public string descricao { get; set; }
     }
 }

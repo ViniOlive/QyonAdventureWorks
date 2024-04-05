@@ -8,5 +8,7 @@ public class ApplicationDbContext : DbContext
     }
 
     public DbSet<competidores> competidores { get; set; }
+    public DbSet<historicocorrida> historicocorrida { get; set; }
+    public DbSet<pistacorrida> pistacorrida { get; set; }
 
 }
